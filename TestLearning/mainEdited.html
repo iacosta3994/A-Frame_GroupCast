@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio
+            id="background"
+            src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"></audio>
+      </a-assets>
+
+      <a-sound
+        src="#background"
+        autoplay="true"
+        position="-1 0.5 -3"
+        sound="loop: true"></a-sound>
+
+
+      <a-entity environment="preset: forest"></a-entity>
+      <a-box
+        position="-1 0.5 -3"
+        rotation="0 0 0" 
+        color="#4CC3D9"
+        animation="property: rotation;
+          to: 0 90 0;
+          loop: true;
+          dur:6000"
+        ></a-box>
+      <a-sphere
+        position="0 1.25 -5"
+        radius="1.25"
+        color="#EF2D5E"
+        animation="property: object3D.position.y;
+                    to: 2.2;
+                    dir: alternate;
+                    dur: 2000;
+                    loop: true"></a-sphere>
+      <a-cylinder
+        position="1 0.75 -3"
+        radius="0.5" height="1.5"
+        color="#FFC65D"
+        animation="property: object3D.scale.y;
+                    to: .2;
+                    dir: alternate;
+                    dur: 5000;
+                    loop: true"></a-cylinder>
+
+
+    </a-scene>
+  </body>
+</html>
